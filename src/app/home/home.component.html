@@ -1,0 +1,120 @@
+<app-header></app-header>
+
+<div class="card">
+    <form [formGroup]="userForm">
+        <div class="mt-5 box">
+            <div class="form-row">
+                <div class="col-md-12">
+                    <div class="form-group"style="margin-top: 10px">
+                        <label>Name</label>
+                    </div>
+                    <div class="form-row" style="margin-top: 10px">
+                        <div class="col">
+                            <input type="text" pattern="[a-zA-Z]+$" 
+                            
+                            name="name" formControlName="name" class="form-control" placeholder="Name">
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group mt-4">
+                        <label>MobileNO</label>
+                    </div>
+                    <div class="form-row" style="margin-top:10px ">
+                        <div class="col">
+                            <input type="text"maxlength="10" formControlName="mobileno" class="form-control" placeholder="MobileNo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group mt-4">
+                        <label>Address</label>
+                    </div>
+                    <div class="form-row" style="margin-top:10px">
+                        <div class="col">
+                            <input type="text" formControlName="address" class="form-control" placeholder="Address">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group mt-4">
+                        <label>Skills</label>
+                    </div>
+                    <div class="form-row" style="margin-top:10px ">
+                        <div class="col">
+                            <input type="text" formControlName="skills" class="form-control" placeholder="Skills">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group mt-4">
+                        <label>Hobbies</label>
+                    </div>
+                    <div class="form-row" style="margin-top:10px ">
+                        <div class="col">
+                            <input type="text" formControlName="hobbies" class="form-control" placeholder="Hobbies">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group mt-4">
+                        <label>Photo</label>
+                    </div>
+                    <div class="form-row" style="margin-top:10px ">
+                        <div class="col">
+                           
+                            <input type="file" (change)="getFile($event)"/><br/>
+                            <input type="button" (click)="submitData()"value="upload file"/>
+                            </div>
+                    </div>
+                </div>
+
+              
+
+                <div class="form-row mt-4">
+                   
+                    <div class="col-6" >
+                    <button type="button" class="btn btn-primary"(click)="addItem()">Submit</button>
+                   
+                    <button type="button" class="btn btn-primary"(click)="reset()">Reset</button>
+                
+            </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="col-md-8 mt-4 mb-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>MobileNo</th>
+                    <th>Address</th>
+                    <th>Skills</th>
+                    <th>Hobbies</th>
+                    <th>Photo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listData">
+                    <td><span>{{item.name}}</span></td>
+                    <td><span>{{item.mobileno}}</span></td>
+                    <td><span>{{item.address}}</span></td>
+                    <td><span>{{item.skills}}</span></td>
+                    <td><span>{{item.hobbies}}</span></td>
+                    <td><span>{{item.photo}}</span></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

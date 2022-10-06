@@ -1,0 +1,26 @@
+<div class="login-container">
+    <img class="film" src="assets/images/angular.png"alt="">
+    <div class="logo">Angular FrameWork</div>
+    <div class="desc">Angular is a TypeScript-based free and open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.</div>
+
+
+<div class="login-form">
+    <div class="form-group">
+        <label for="uname">Username</label>
+        <input type="text"name="unname"class="form-control"[(ngModel)]="username"/>
+    </div>
+
+        <div class="form-group">
+            <label for="pword">Password</label>
+            <input type="text"name="pword" class="form-control"[(ngModel)]="password"/>
+        </div>
+
+<div class="btn-container">
+
+    <button class="btn btn-dark"(click)="login()">Login</button>
+    <div class="error">{{errorMsg}}</div>
+           
+</div>
+
+</div>
+</div>
